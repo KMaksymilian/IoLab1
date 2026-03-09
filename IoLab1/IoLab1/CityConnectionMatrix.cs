@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IoLab1
 {
-    internal class CityConnection
+    public class CityConnection
     {
         public Dictionary<(String, String), int> _matrix;
 
@@ -22,6 +22,11 @@ namespace IoLab1
         {
             _matrix.TryGetValue(key, out var value);
             return value;
+        }
+
+        public bool IfContain((String,String) key)
+        {
+            return _matrix.ContainsKey(key);
         }
        
     }
